@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update product</title>
+</head>
+<body>
+
+    <h1>Update Product</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="prod_name">product name:</label>
+        <input type="text" value="{{ product.prod_name}}" name="prod_name"> <br><br>
+
+        <label for="prod_price">product price:</label>
+        <input type="text" value="{{ product.prod_price}}" name="prod_price"> <br><br>
+
+        <label for="prod_category">product category:</label>
+        <input type="text" value="{{ product.prod_category}}" name="prod_category"> <br><br>
+
+        <label for="prod_qnty">product qnty:</label>
+        <input type="text" value="{{ product.prod_qnty}}" name="prod_qnty"> <br><br>
+
+        <label for="prod_desc">product desc:</label>
+        <textarea name="description" value="{{ product.prod_desc}}" name="prod_desc" ></textarea>  <br><br>
+
+        <label for="prod_img">product image:</label>
+        <img src="/media/{{product.prod_img}}" alt="">
+        <input type="file"  name="prod_img"> <br><br>
+
+        <button type="submit">Update product</button>
+    </form>
+</body>
+</html>
